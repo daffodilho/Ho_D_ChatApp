@@ -1,0 +1,23 @@
+{
+  "name": "ho_d_chatapp",
+  "version": "1.0.0",
+  "description": "interactive chat application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daffodilho/Ho_D_ChatApp.git"
+  },
+  "author": "daffodil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daffodilho/Ho_D_ChatApp/issues"
+  },
+  "homepage": "https://github.com/daffodilho/Ho_D_ChatApp#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
