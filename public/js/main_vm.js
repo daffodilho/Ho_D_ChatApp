@@ -20,7 +20,8 @@ const vm = new Vue({
         socketID: "", 
         messages: [],
         message: "",
-        nickName: ""
+        nickName: "",
+        isHidden: false
     },
 
     methods: {
@@ -29,7 +30,7 @@ const vm = new Vue({
             console.log('handle send message');
 
             socket.emit('chat_message', {
-                content: this.message,
+                content: this.message || "no content",
                 name: this.nickName || "anonymous",
                 // || is called a double pipe operator or an "or" operator
                 // if this.nickName is set, use it as the value
@@ -38,6 +39,11 @@ const vm = new Vue({
 
             this.message = "";
         },
+
+        closeLB() {
+            console.log ('close');
+            this.isHidden = true;
+        }
 
     },
 
