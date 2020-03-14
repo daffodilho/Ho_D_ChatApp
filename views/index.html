@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="https://unpkg.com/vue"></script>
     
-    <title>Socket IO Chat with Node!</title>
+    <title>My First Chat App</title>
 </head>
 
 <body>
 	<main id="app">
+		<div class="lightbox" :class="{ hidden: isHidden }">
+			<div id="name">
+				<h2>What's your name?</h2>
+				<input v-model="nickName" type="text">
+				<button @click="closeLB">Enter chatroom</button>
+			</div>
+		</div>
+		
 		<section class="messages">
 			<ul id="messages" v-for="message in messages">
 				<!-- render a new message component for every message -->
@@ -25,9 +33,8 @@
 			<!-- <input type="text" id="nickname" class="nickname" placeholder="What is your nickname?"> -->
 
 			<form>
-				<!-- <label for="message">Something to say?</label> -->
-				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
-				<input @click.prevent="dispatchMessage" type="submit">
+				<textarea v-model="message" type="text" id="textarea" class="message"  autocomplete="off"></textarea>
+				<button @click.prevent="dispatchMessage" type="submit">send</button>
 			</form>
 		</section>
 	</main>
