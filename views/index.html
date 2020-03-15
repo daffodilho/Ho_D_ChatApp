@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="https://unpkg.com/vue"></script>
     
-    <title>My First Chat App</title>
+    <title>Marmalade Alchemy</title>
 </head>
 
 <body>
@@ -22,18 +22,15 @@
 		</div>
 		
 		<section class="messages">
+			<p id="notification">{{ notification }}</p>
 			<ul id="messages" v-for="message in messages">
-				<!-- render a new message component for every message -->
 				<newmessage :msg="message"></newmessage>
 			</ul>
 		</section>
 
 		<section class="form-container">
-			<!-- <label for="nickname">Your Nickname (optional)</label> -->
-			<!-- <input type="text" id="nickname" class="nickname" placeholder="What is your nickname?"> -->
-
 			<form>
-				<textarea v-model="message" type="text" id="textarea" class="message"  autocomplete="off"></textarea>
+				<textarea v-model="message" type="text" id="textarea" class="message"  autocomplete="off" placeholder="Type something"></textarea>
 				<button @click.prevent="dispatchMessage" type="submit">send</button>
 			</form>
 		</section>

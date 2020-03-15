@@ -1,4 +1,4 @@
-@import 'modules/name';
+@import 'modules/login';
 
 body { font: 16px Helvetica, Arial; }
 
@@ -7,21 +7,29 @@ body { font: 16px Helvetica, Arial; }
 }
 
 main { 
-    height: 100%;
+    height: 100vh;
 }
 
 .messages { 
     background: url('../images/alchemy.gif');
-    min-height: 86vh;
-    height: 100%; 
+    min-height: 88vh;
+    overflow-y: scroll; // not sure how to fix the scrollbar
+}
+
+#notification {
+    width: auto;
+    max-width: 25%;
+    margin: 10px auto;
+    padding: 5px;
+    background-color: rgb(255,255,255,0.9);
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 20px;
 }
 
 #messages {
     list-style-type: none; 
-    margin: 0; 
-    padding: 10px;
-    overflow-y: scroll;
-
+    
 	li:nth-child(odd) { background: #eee; }
 }
 
@@ -41,10 +49,13 @@ form {
 
     textarea {
         width: 80%;
-        height: 40%;
+        height: 20%;
         margin: auto 0;
+        padding: 10px;
         border: none;
+        font-family: 'Helvetica', sans-serif;
         font-size: 1em;
+        border-radius: 20px;
     }
 
 	button { 
