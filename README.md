@@ -3,39 +3,41 @@
 ## Summary
 Welcome to Marmalade Alchemy Chatroom, a simple, real-time chat application built using node.js, express.js, socket.io and vue.js!
 
-You can access the chatroom by clicking [here](https://marmalade-alchemy.herokuapp.com/ "Marmalade Alchemy")
+You can directly access the chatroom by clicking on this [link](https://marmalade-alchemy.herokuapp.com/ "Marmalade Alchemy")
 
 Project date: Mar 13 - Mar 17, 2020
 
 ## Installing
-1. cd to the directory of your choice and clone the repo
+1. Cd to the directory of your choice and clone the repo
   ``` 
   git clone https://github.com/daffodilho/Ho_D_ChatApp.git
   ```
 
-2. install dependencies by running the command in your terminal
+2. Install dependencies by running the command in your terminal
   ```
   npm install
   ```
 
-3. start the app and go to localhost:3031 in your browser
+3. Start the app
   ```
   npm start
   ```
 
+4. Go to [localhost:3031](http://localhost:3031/)
+
 ## Tools Used
 * HTML5
 * CSS (SASS)
-* Vue (Front-end framework)
+* Vue.js (Front-end framework)
 * Node.js
-* Socket.io
 * Express.js 
+* Socket.io
 
 ## Authors
 * Daffodil Ho
 
 ## Acknowledgements
 * Trevor's lessons
-* [socket.io](https://socket.io/)
-* [vue.js](https://vuejs.org/)
+* [Socket.io](https://socket.io/)
+* [Vue.js](https://vuejs.org/)
 * [Heroku](www.heroku.com)
