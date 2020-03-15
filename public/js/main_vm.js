@@ -10,6 +10,11 @@ function runDisconnectMessage(packet) {
     console.log(packet);
 }
 
+// function updateNotification(update) {
+//     // take the incoming update and push it into the Vue instance
+//     vm.notification.push(update)
+// }
+
 function appendNewMessage(msg) {
     // take the incoming message and push it into the Vue instance
     vm.messages.push(msg);
@@ -21,7 +26,8 @@ const vm = new Vue({
         messages: [],
         message: "",
         nickName: "",
-        isHidden: false
+        isHidden: false,
+        notification: "Welcome to Marmalade Alchemy Chatroom"
     },
 
     methods: {
@@ -43,8 +49,7 @@ const vm = new Vue({
         closeLB() {
             console.log ('close');
             this.isHidden = true;
-        }
-
+        },
     },
 
     components: {
