@@ -19,7 +19,6 @@ const server = app.listen(port, () => {
 });
 
 let user = 0;
-console.log(user);
 
 // this is all of our socket.io messaging functionality
 
@@ -28,8 +27,9 @@ io.attach(server);
 
 io.on('connection', function(socket) {
     console.log('user connected');
-    console.log(++user + " user(s) online");
-    socket.emit('connected', { sID: `${socket.id}`, message: 'new connection'});
+    ++user;
+    // io.emit('notification', { update: user });
+    socket.emit('connected', { sID: `${socket.id}`, message: 'user connected'});
 
     // listen for an incoming message from a user (socket refers to an individual user)
     // msg is the incoming message from that user
@@ -45,7 +45,8 @@ io.on('connection', function(socket) {
     // listen for a disconnect event
     socket.on('disconnect', function() {
         console.log('a user disconnected');
-        console.log(--user + " user(s) online");
+        --user;
+        // io.emit('notification', user);
 
         message = `${socket.id} has left the chat!`;
         io.emit('user_disconnect', message);

@@ -20,18 +20,27 @@
 				<button @click="closeLB">Enter chatroom</button>
 			</div>
 		</div>
+
+		<div id="skin">
+			<p>Change Skin</p>
+			<button @click="setDesign" id="design"></button>
+			<button @click="setGeo" id="geo"></button>
+			<button @click="setAlchemy" id="alchemy"></button>
+		</div>
 		
-		<section class="messages">
+		<section class="messages" :class="{ designskin: isDesign, geoskin: isGeo, alchemyskin: isAlchemy }">
 			<p id="notification">{{ notification }}</p>
 			<ul id="messages" v-for="message in messages">
 				<newmessage :msg="message"></newmessage>
 			</ul>
 		</section>
 
-		<section class="form-container">
+		<section class="form-container" :class="{ designbg: isDesignBg, geobg: isGeoBg, alchemybg: isAlchemyBg }">
 			<form>
 				<textarea v-model="message" type="text" id="textarea" class="message"  autocomplete="off" placeholder="Type something"></textarea>
-				<button @click.prevent="dispatchMessage" type="submit">send</button>
+				<button @click.prevent="dispatchMessage" 
+				:class="{ designbtn: isDesignBtn, geobtn: isGeoBtn, alchemybtn: isAlchemyBtn }" 
+				type="submit">send</button>
 			</form>
 		</section>
 	</main>
