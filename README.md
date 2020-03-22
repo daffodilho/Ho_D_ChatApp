@@ -1,11 +1,11 @@
-# Marmalade Alchemy Chatroom
+# Chatrooms!
 
 ## Summary
-Welcome to Marmalade Alchemy Chatroom, a simple, real-time chat application built using node.js, express.js, socket.io and vue.js!
+Welcome to Chatrooms!, a simple, real-time chat application built using node.js, express.js, socket.io and vue.js.
 
-You can directly access the chatroom by clicking on this [link](https://marmalade-alchemy.herokuapp.com/ "Marmalade Alchemy")
+You can directly access Chatrooms! by clicking on this [link](https://marmalade-alchemy.herokuapp.com/ "Chatrooms!")
 
-Project date: Mar 13 - Mar 17, 2020
+Project date: Mar 13 - Mar 22, 2020
 
 ## Installing
 1. Cd to the directory of your choice and clone the repo
@@ -41,3 +41,4 @@ Project date: Mar 13 - Mar 17, 2020
 * [Socket.io](https://socket.io/)
 * [Vue.js](https://vuejs.org/)
 * [Heroku](www.heroku.com)
+* [The Pattern Library](http://thepatternlibrary.com/#naranjas)
