@@ -3,7 +3,7 @@
 ## Summary
 Welcome to Chatrooms!, a simple, real-time chat application built using node.js, express.js, socket.io and vue.js.
 
-You can directly access Chatrooms! by clicking on this [link](https://marmalade-alchemy.herokuapp.com/ "Chatrooms!")
+You can directly access Chatrooms! by clicking on this [link](https://chatrooms2020.herokuapp.com/ "Chatrooms!")
 
 Project start date: March 13, 2020
 
@@ -32,9 +32,6 @@ Project start date: March 13, 2020
 * Node.js
 * Express.js 
 * Socket.io
-
-## Authors
-* Daffodil Ho
 
 ## Acknowledgements
 * Trevor's lessons
