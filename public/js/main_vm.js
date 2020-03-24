@@ -25,6 +25,9 @@ function broadcastMessage(hello) {
 function appendNewMessage(msg) {
     // take the incoming message and push it into the Vue instance
     vm.messages.push(msg);
+    let bgm = new Audio();
+    bgm.src = "../audio/notification.mp3";
+    bgm.play();
 }
 
 const vm = new Vue({
@@ -46,7 +49,7 @@ const vm = new Vue({
         isAlchemyBg: false,
         isAlchemyBtn: false,
 
-        notification: ""
+        notification: "Welcome to Chatrooms! [Marmalade Alchemy]"
     },
 
     methods: {
@@ -55,7 +58,7 @@ const vm = new Vue({
             console.log('handle send message');
 
             socket.emit('chat_message', {
-                content: this.message || "no content",
+                content: this.message || "[empty]",
                 name: this.nickName || "anonymous",
                 // || is called a double pipe operator or an "or" operator
                 // if this.nickName is set, use it as the value
@@ -71,7 +74,7 @@ const vm = new Vue({
         },
 
         setDesign() {
-            console.log ('change to gloomy designer theme');
+            console.log ('change to gloomy designer skin');
             this.isDesign = true;
             this.isDesignBg = true;
             this.isDesignBtn = true;
@@ -82,7 +85,7 @@ const vm = new Vue({
             this.isAlchemyBg = false;
             this.isAlchemyBtn = false;
 
-            this.notification = "Welcome to Gloomy Designer Chatroom";
+            this.notification = "Welcome to Chatrooms! [Gloomy Designer]"
         },
 
         setGeo() {
@@ -97,7 +100,7 @@ const vm = new Vue({
             this.isAlchemyBg = false;
             this.isAlchemyBtn = false;
 
-            this.notification = "Welcome to Tokyo Geometric Chatroom";
+            this.notification = "Welcome to Chatrooms! [Tokyo Geometric]"
         },
         
         setAlchemy() {
@@ -113,7 +116,7 @@ const vm = new Vue({
             this.isAlchemyBg = true;
             this.isAlchemyBtn = true;
 
-            this.notification = "Welcome to Marmalade Alchemy Chatroom";
+            this.notification = "Welcome to Chatrooms! [Marmalade Alchemy]"
         }
         
     },
@@ -131,4 +134,4 @@ socket.addEventListener('connected', setUserId);
 socket.addEventListener('user_disconnect', runDisconnectMessage);
 socket.addEventListener('new_message', appendNewMessage);
 // socket.addEventListener('notification', appendNewNotification);
-socket.addEventListener('broadcast', broadcastMessage);
+// socket.addEventListener('broadcast', broadcastMessage);
