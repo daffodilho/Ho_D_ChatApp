@@ -14,6 +14,18 @@
 
 .my-message {
     float: right !important;
-    background-color: #86bf9d;
+    background-color: #555B63;
     color: white;
+    animation: 0.1s slidein;
+    transition: ease-out;
 }
+
+@keyframes slidein {
+    from {
+        margin-top: 2px;
+      }
+    
+      to {
+        margin-top: 0px;
+      }
+    }
