@@ -55,6 +55,7 @@ const vm = new Vue({
     methods: {
         dispatchMessage() {
             // emit a message event and send the message to the server
+
             console.log('handle send message');
 
             socket.emit('chat_message', {
@@ -63,6 +64,15 @@ const vm = new Vue({
                 // || is called a double pipe operator or an "or" operator
                 // if this.nickName is set, use it as the value
                 // or just make name "anonymous"
+            })
+
+            this.message = "";
+        },
+
+        submit() {
+            socket.emit('chat_message', {
+                content: this.message || "[empty]",
+                name: this.nickName || "anonymous",
             })
 
             this.message = "";
