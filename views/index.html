@@ -37,7 +37,7 @@
 
 		<section class="form-container" :class="{ designbg: isDesignBg, geobg: isGeoBg, alchemybg: isAlchemyBg }">
 			<form>
-				<textarea v-model="message" type="text" id="textarea" class="message"  autocomplete="off" placeholder="Type something"></textarea>
+				<textarea v-model="message" @keyup.enter="submit" type="text" id="textarea" class="message" autocomplete="off" placeholder="Type something"></textarea>
 				<button @click.prevent="dispatchMessage" 
 				:class="{ designbtn: isDesignBtn, geobtn: isGeoBtn, alchemybtn: isAlchemyBtn }" 
 				type="submit">send</button>

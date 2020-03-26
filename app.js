@@ -28,8 +28,9 @@ io.attach(server);
 io.on('connection', function(socket) {
     console.log('user connected');
     ++user;
+    console.log(user + ' user(s) online');
     // io.emit('notification', { update: user });
-    socket.emit('connected', { sID: `${socket.id}`, message: 'user connected'});
+    socket.emit('connected', { sID: `${socket.id}`, message: `${user} user(s) online`});
 
     // listen for an incoming message from a user (socket refers to an individual user)
     // msg is the incoming message from that user
@@ -46,9 +47,10 @@ io.on('connection', function(socket) {
     socket.on('disconnect', function() {
         console.log('a user disconnected');
         --user;
+        console.log(user + ' user(s) online');
         // io.emit('notification', user);
 
-        message = `${socket.id} has left the chat!`;
+        message = `${socket.id} has left the chat! ${user} user(s) online`;
         io.emit('user_disconnect', message);
     })
 });
